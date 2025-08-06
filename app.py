@@ -112,10 +112,6 @@ elif page == "📂 View Entries":
                     st.markdown(f"- {file}")
             col1, col2 = st.columns([1, 1])
             with col1:
-                if st.button(f"📝 Edit {entry['date']}", key="edit"+entry["date"]):
-                    st.experimental_set_query_params(page="edit", date=entry["date"])
-                    st.rerun()
-            with col2:
                 if st.button(f"🗑️ Delete {entry['date']}", key="delete"+entry["date"]):
                     delete_entry(entry["date"])
                     st.warning(f"Deleted entry for {entry['date']}")
